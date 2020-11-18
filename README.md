@@ -29,5 +29,3 @@ while True:
     print("Blue Level:", x)
     
 ```
-### Image
-<img src="/images/RGB.mp3" height="500">
