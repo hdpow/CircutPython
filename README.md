@@ -1,7 +1,5 @@
 # CircutPython
 
-## FIRST ATTEMPT
-
 ### Description
 
 basically a copy of alden's code, found [here](https://github.com/adent11/CircuitPython/blob/master/HelloCircuitPython.py). In essence, there is one variable, x. the variable x directly relates to the level of "blue" in the Neopixel. the opposite of that, plus 255, is the "red" level.  if the level is greater than 195, it goes down. if it is greater than 60, it goes up. I edited it a bit so that it would less pure color, and more of the gradient.
