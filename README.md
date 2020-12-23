@@ -38,7 +38,7 @@ this assignment was pretty cool. as a professional epic gamer, everything that I
 
 ### Description
 
-The CircutPython Servo involved 
+The CircutPython Servo involves utilizing the Capacitive Touch module to modify a variable that then modifies a servo. if one wire is touched, the angle of the servo is set to zero. if the other wire is touched, the angle is set to 180.
 
 ### Evidence
 
@@ -72,3 +72,8 @@ while True:
 
 ### Proof
 <img src="/images/CircutPythonServo.gif" height="500">
+oh god why doesnt it work ffs. 
+
+### Reflect
+
+This assignment was very interesting. the capacative touch is very satisfying to work with. I had some troubles with the library and figuring out how it worked, but it turned out that the circutpy had some left over librarys from the previous owner and I didnt need them, so i simply deleted everything exept for the servo.
