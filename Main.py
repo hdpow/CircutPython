@@ -9,5 +9,3 @@ while true:
   print("make it yellow!")
   time.sleep(.5)
     dot.fill((255,255,0))
-
-  
