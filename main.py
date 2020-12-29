@@ -11,12 +11,13 @@ lcd = LCD(I2CPCF8574Interface(0x3f), num_rows=2, num_cols=16)
 
 
 # create a Cap Touch value
+cap_touch_black = board.A3
+cap_touch_red = board.A1
+touchBlack = touchio.TouchIn(cap_touch_black)
+touchRed = touchio.TouchIn(cap_touch_red)
 
-touchA1 = touchio.TouchIn(A1.count)
-touchA5 = touchio.TouchIn(A5.switch)
-
-pastA1 = None
-pastA5 = None
+pastBlack = None
+pastRed = None
 
 lcd.set_cursor_pos(0, 0)
 lcd.print("Increment ")
@@ -25,16 +26,15 @@ lcd.set_cursor_pos(1,0)
 lcd.print("Value ")
 
 while True:
-    while True:
-    if touchA5.value and not(pastA5):
-        print("Touched A5!")
+    if touchBlack.value and not(pastBlack):
+        print("Touched Black!")
         increment = increment*-1
         lcd.set_cursor_pos(0, 10)
         lcd.print(str(increment) + " ")
         print(increment)
 
-    if touchA1.value and not(pastA1):
-        print("Touched A1!")
+    if touchRed.value and not(pastRed):
+        print("Touched Red!")
         count = count + increment
         lcd.set_cursor_pos(1, 6)
         lcd.print("          ")
@@ -42,6 +42,7 @@ while True:
         lcd.set_cursor_pos(1, 6)
         lcd.print(str(count))
         print(count)
-    pastA5 = touchA5.value
-    pastA1 = touchA1.value
+    pastBlack = touchBlack.value
+    pastRed = touchRed.value
     time.sleep(.01)
+    
