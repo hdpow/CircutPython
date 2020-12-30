@@ -71,9 +71,44 @@ while True:
  ```
 
 ### Proof
-<img src="/images/CircutPythonServo.gif" height="500">
-oh god why doesnt it work ffs. 
+
+[<img src="/Images/CircutPythonServo.gif" alt="CircutPythonServo.gif" width="350" height="250">](/Images/CircutPythonServo.gif)
 
 ### Reflect
 
 This assignment was very interesting. the capacative touch is very satisfying to work with. I had some troubles with the library and figuring out how it worked, but it turned out that the circutpy had some left over librarys from the previous owner and I didnt need them, so i simply deleted everything exept for the servo.
+
+# CircutPython LCD
+
+### Discription
+
+Remember that assignment from Engineering 2 where you wired up an LCD screen, a button, and a switch?  The LCD screen displayed the button press count and the switch determined if you were counting up or down.  Let's see if we can spice that up a little for Engineering 3 using CircuitPython.
+
+### Process
+
+well, this was a fun assignment. Thank god that other people can tell me what code I have to use special thanks to [Bob](https://github.com/jkammau97/CircuitPython) for literally carrying me. By far the most difficult part of the assignment was figuring out how to make a button that does not repeat constantly. and... I never really figured it out. I have a vauge idea of how bob's code works. It has something to do with the fact that, on the last line, it says
+
+``` python
+    pastBlack = touchBlack.value
+    pastRed = touchRed.value
+```
+I think that this makes it so that after it does the function once, it makes the value of touch(colour).value None once the function is done once. the value stays at None untill the wire is touched again, changing it to True for one tick before it changes into None again. this is caused by the code
+``` python
+    if touch(colour.value and not(past(colour):
+```
+
+### Evidence
+
+Heres the code working:
+
+[<img src="/Images/CircutPythonLCD.gif" alt="CircutPythonLCD.gif" width="350" height="250">](/Images/CircutPythonLCD.gif)
+
+Heres a wiring diagram, borrowed from [Alden](https://github.com/adent11/CircuitPython#CircuitPython-LCD)
+
+My code can be found [here](https://github.com/hdpow/CircutPython/blob/main/main.py)
+
+bob's code can be found [here](https://github.com/jkammau97/CircuitPython)
+
+### Reflection
+
+once again, it was really hard for me to summon the mental energy to actually do this assigment. once I started and broke down my inhebitions abut borrowning other peoples advice and work, It sped up a lot. I think I know more about true/false/null, and I know how to make a button that only sends a signal once. so all in all, pretty successfull.
